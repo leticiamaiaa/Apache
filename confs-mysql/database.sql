@@ -1,0 +1,15 @@
+CREATE TABLE Autor
+(
+  Nome VARCHAR(100) NOT NULL,
+  Id_autor INT NOT NULL,
+  PRIMARY KEY (Id_autor)
+);
+
+CREATE TABLE Livro
+(
+  Nome VARCHAR(100) NOT NULL,
+  Id INT NOT NULL,
+  Id INT NOT NULL,
+  PRIMARY KEY (Id),
+  FOREIGN KEY (Id) REFERENCES Autor(Id_autor)
+);
