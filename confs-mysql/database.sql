@@ -1,15 +1,18 @@
-CREATE TABLE Autor
+CREATE TABLE categorias
 (
-  Nome VARCHAR(100) NOT NULL,
-  Id_autor INT NOT NULL,
-  PRIMARY KEY (Id_autor)
+  id_categoria INT NOT NULL,
+  nome_categoria VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id_categoria)
 );
 
-CREATE TABLE Livro
+CREATE TABLE livros
 (
-  Nome VARCHAR(100) NOT NULL,
-  Id INT NOT NULL,
-  Id INT NOT NULL,
-  PRIMARY KEY (Id),
-  FOREIGN KEY (Id) REFERENCES Autor(Id_autor)
+  id_livro INT NOT NULL,
+  nome_livro VARCHAR(45) NOT NULL,
+  editora_livro VARCHAR(255) NOT NULL,
+  autor_livro VARCHAR(255) NOT NULL,
+  resenha_livro VARCHAR(Max) NOT NULL,
+  id_categoria INT NOT NULL,
+  PRIMARY KEY (id_livro),
+  FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
 );
